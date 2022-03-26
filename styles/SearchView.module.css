@@ -236,6 +236,10 @@
     width: 100%;
     margin: 0 auto;
   }
+  .input_container {
+    width: 100%;
+    margin: 100px auto;
+  }
   .cody_list {
     margin-top: 10px;
   }
@@ -258,10 +262,6 @@
     font-weight: 300;
     font-size: 15px;
     color: #969696;
-  }
-  .input_container {
-    width: 100%;
-    margin: 100px auto;
   }
 
   .input {
@@ -291,6 +291,10 @@
   }
 }
 @media screen and (min-width: 390px) and (max-width: 575px) {
+  .input_container {
+    width: 100%;
+    margin: 100px auto;
+  }
   .item_area {
     width: 100%;
     margin: 0 auto;
@@ -307,10 +311,6 @@
     width: 190px;
     height: 259px;
     border-radius: 12px;
-  }
-  .input_container {
-    width: 100%;
-    margin: 100px auto;
   }
 
   .input {
@@ -345,12 +345,24 @@
   }
 }
 @media screen and (min-width: 361px) and (max-width: 390px) {
+  .input_container {
+    width: 100%;
+    margin: 100px auto;
+  }
   .item_area {
     width: 100%;
     margin: 0 auto;
   }
   .cody_list {
     margin-top: 10px;
+  }
+  .input {
+    width: 280px;
+    border: 0;
+    border-bottom: 3px solid #222;
+    font-family: pretendard;
+    font-size: 25px;
+    color: #000;
   }
   .cody_li {
     width: 180px;
@@ -395,12 +407,24 @@
 }
 
 @media screen and (min-width: 321px) and (max-width: 361px) {
+  .input_container {
+    width: 100%;
+    margin: 100px auto;
+  }
   .item_area {
     width: 100%;
     margin: 0 auto;
   }
   .cody_list {
     margin-top: 10px;
+  }
+  .input {
+    width: 280px;
+    border: 0;
+    border-bottom: 3px solid #222;
+    font-family: pretendard;
+    font-size: 25px;
+    color: #000;
   }
   .cody_li {
     width: 170px;
@@ -444,6 +468,10 @@
 }
 
 @media screen and (max-width: 321px) {
+  .input_container {
+    width: 100%;
+    margin: 100px auto;
+  }
   .cody_list {
     margin-top: 1px;
   }
