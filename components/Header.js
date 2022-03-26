@@ -164,18 +164,20 @@ const Header = () => {
             </div>
           </Link>
 
-          <div className={style.nav_mobile}>
-            <img
-              onClick={searchShow}
-              className={style.menu}
-              src="/icon/icons8-search.svg"
-            />
-            <img
-              onClick={showDrawer}
-              className={style.menu}
-              src="/icon/menu.svg"
-            />
-          </div>
+          <nav className={style.nav_ul}>
+            <div className={style.nav_btn}>
+              <img
+                onClick={searchShow}
+                className={style.icon_search}
+                src="/icon/icons8-search.svg"
+              />
+              <img
+                onClick={showDrawer}
+                className={style.icon_menu}
+                src="/icon/menu.svg"
+              />
+            </div>
+          </nav>
           <Drawer
             placement="top"
             onClose={searchClose}
@@ -183,7 +185,7 @@ const Header = () => {
             destroyOnClose="true"
             closeIcon=""
             height={
-              Array.isArray(result) && result.length === 0 ? "125" : "auto"
+              Array.isArray(result) && result.length === 0 ? "100%" : "100%"
             }
           >
             <form onSubmit={onSubmit} className={style.search_container}>

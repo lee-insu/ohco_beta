@@ -40,18 +40,26 @@
   cursor: pointer;
 }
 
-.nav_mobile {
+.nav_ul {
   width: 100%;
-  display: flex;
-  justify-content: right;
+  display: inline-block;
 }
 
-.menu {
+.nav_btn {
+  width: auto;
+  position: relative;
+  top: 20px;
+  float: right;
+}
+
+.icon_search {
+  width: 24px;
+}
+
+.icon_menu {
   width: 24px;
   position: relative;
-  margin-right: 10px;
-  margin-left: 15px;
-  cursor: pointer;
+  left: 25px;
 }
 
 .close {

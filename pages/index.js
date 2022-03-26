@@ -12,7 +12,7 @@ import {
 } from "../graphQL/schema";
 import SubItemList from "../components/SubItemList";
 import { client } from "../service/apollo";
-import Temperature from "../components/temperature";
+import Temperature from "../components/Temperature";
 
 export default function Home({
   musicArray,
