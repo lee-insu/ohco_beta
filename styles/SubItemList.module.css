@@ -1,0 +1,222 @@
+.inner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.sub_list {
+  width: 100%;
+  min-height: auto;
+  height: auto;
+  margin-top: 40px;
+}
+.title {
+  position: relative;
+}
+.style_title {
+  font-family: pretendard;
+  font-weight: 700;
+  font-size: 23px;
+  top: 20px;
+}
+.sub_style_title {
+  position: relative;
+  bottom: 3px;
+  font-family: pretendard;
+  font-weight: 500;
+  font-size: 15px;
+  color: #9b9999;
+}
+.info_container {
+  width: 100%;
+}
+.list_container {
+  width: 100%;
+  height: auto;
+  margin-top: 18px;
+}
+.item_ul_container {
+  width: 100%;
+  overflow-x: scroll;
+}
+.item_ul {
+  width: auto;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 18px;
+  list-style: none;
+  overflow: auto;
+  padding: 0;
+}
+.item_ul > li {
+  position: relative;
+  width: 260px;
+  height: 350px;
+  margin: 0 64px 0 0;
+  overflow: hidden;
+  cursor: pointer;
+  list-style: none;
+}
+
+.item_img {
+  width: 100%;
+  height: 260px;
+  border-radius: 22px;
+  object-fit: cover;
+}
+.item_info_container :nth-child(1) {
+  font-family: pretendard;
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 7px;
+
+  color: #9d9d9d;
+}
+.item_info_container :nth-child(2) {
+  font-family: pretendard;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.item_info_container :nth-child(3) {
+  font-family: pretendard;
+  font-weight: 700;
+  font-size: 13px;
+  color: rgb(180, 180, 180);
+}
+
+@media screen and (min-width: 992px) and (max-width: 1220px) {
+  .item_ul > li {
+    position: relative;
+    width: 221px;
+    height: 301px;
+    margin: 0 11px;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+  }
+  .item_img {
+    width: 100%;
+    height: 221px;
+    border-radius: 22px;
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .item_ul > li {
+    position: relative;
+    width: 180px;
+    height: 251px;
+    margin: 0 11px;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+  }
+  .item_img {
+    width: 100%;
+    height: 180px;
+    border-radius: 18px;
+    object-fit: cover;
+  }
+  .item_info_container :nth-child(1) {
+    font-size: 13px;
+    margin-top: 3px;
+  }
+  .item_info_container :nth-child(2) {
+    font-size: 13px;
+  }
+  .item_info_container :nth-child(3) {
+    font-size: 11px;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 768px) {
+  .cody_info_container :nth-child(1) {
+    font-size: 16px;
+    margin-top: 3px;
+  }
+  .cody_info_container :nth-child(2) {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 576px) {
+  .item_ul > li {
+    position: relative;
+    width: 221px;
+    height: 321px;
+    margin: 0 11px;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+  }
+  .item_img {
+    width: 100%;
+    height: 221px;
+    border-radius: 22px;
+    object-fit: cover;
+  }
+  .item_info_container :nth-child(1) {
+    font-size: 16px;
+    margin-top: 3px;
+  }
+  .item_info_container :nth-child(2) {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 390px) and (max-width: 480px) {
+  .item_ul > li {
+    position: relative;
+    width: 180px;
+    height: 241px;
+    margin: 0 11px;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+  }
+  .item_img {
+    width: 100%;
+    height: 180px;
+    border-radius: 18px;
+    object-fit: cover;
+  }
+  .item_info_container :nth-child(1) {
+    font-size: 13px;
+    margin-top: 3px;
+  }
+  .item_info_container :nth-child(2) {
+    font-size: 13px;
+  }
+  .item_info_container :nth-child(3) {
+    font-size: 11px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .item_ul > li {
+    position: relative;
+    width: 170px;
+    height: 231px;
+    margin: 0 11px;
+    overflow: hidden;
+    cursor: pointer;
+    list-style: none;
+  }
+  .item_img {
+    width: 100%;
+    height: 170px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  .item_info_container :nth-child(1) {
+    font-size: 13px;
+    margin-top: 3px;
+  }
+  .item_info_container :nth-child(2) {
+    font-size: 13px;
+  }
+  .item_info_container :nth-child(3) {
+    font-size: 11px;
+  }
+}

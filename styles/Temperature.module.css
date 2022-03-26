@@ -1,0 +1,15 @@
+.container {
+  width: 100%;
+  position: relative;
+}
+.flex {
+  display: flex;
+}
+.location_btn {
+  width: 15px;
+  height: 15px;
+  margin-left: 8px;
+  position: relative;
+  top: 4px;
+  cursor: pointer;
+}

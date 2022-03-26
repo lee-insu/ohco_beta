@@ -1,0 +1,156 @@
+.container {
+  width: 100%;
+  height: 65px;
+  position: relative;
+  border-bottom: 1px solid #e4e4e4;
+  background-color: #fff;
+}
+.inner {
+  position: relative;
+  width: 95.8%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+.logo {
+  width: 6.5rem;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logdo {
+  width: 99px;
+  height: 65px;
+  background-color: red;
+  display: flex;
+  align-items: center;
+}
+.nav {
+  margin-left: auto;
+  display: flex;
+  padding-top: 20px;
+}
+
+.nav > div {
+  margin-right: 45px;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.nav_mobile {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.menu {
+  width: 24px;
+  position: relative;
+  margin-right: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.close {
+  width: 24px;
+  height: 24px;
+}
+
+.menu_btn {
+  font-family: pretendard;
+  font-weight: 500;
+  font-size: 17px;
+}
+.logout {
+  color: rgb(255, 100, 100);
+  font-family: pretendard;
+  font-weight: 500;
+  font-size: 17px;
+}
+.search {
+  width: 23px;
+  position: relative;
+  margin-right: 40px;
+  bottom: 11px;
+  cursor: pointer;
+}
+
+.search_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.result_container {
+  width: 44rem;
+  max-height: 400px;
+  overflow-y: scroll;
+  margin: 0 auto;
+}
+
+.input {
+  width: 40rem;
+  height: 40px;
+  border: 0;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.search_close {
+  width: 4rem;
+  position: relative;
+  font-family: pretendard;
+  font-weight: 400;
+  font-size: 14px;
+  color: #303030;
+  top: 8px;
+  left: 12px;
+  cursor: pointer;
+}
+.preview_title {
+  font-family: pretendard;
+  font-weight: 200;
+  font-size: 11px;
+  color: rgb(192, 192, 192);
+  margin-bottom: 2px;
+}
+
+.result_container {
+  margin-top: 10px;
+}
+
+.result_item_container {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eeeeee;
+  cursor: pointer;
+}
+
+.cody_img {
+  width: 60px;
+  border-radius: 5px;
+}
+
+.sub {
+  width: 100%;
+  margin-left: 10px;
+  padding: 20px 0;
+}
+
+.sub > :nth-child(1) {
+  font-family: pretendard;
+  font-weight: 200;
+  font-size: 13px;
+  color: #727272;
+}
+.sub > :nth-child(2) {
+  font-family: pretendard;
+  font-weight: 300;
+  font-size: 15px;
+  color: #2e2e2e;
+}

@@ -1,0 +1,47 @@
+.inner {
+  width: 100%;
+  font-family: pretendard;
+  font-weight: 200;
+  font-size: 13px;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.ul {
+  list-style: none;
+  padding: 0;
+}
+.ul::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.ul > li {
+  display: flex;
+  margin-top: 15px;
+}
+.ul > li > p {
+  position: relative;
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 10px;
+  bottom: 3px;
+  color: #888;
+}
+
+.textarea {
+  width: 100%;
+  height: 90px;
+  margin: 0 auto;
+  background-color: #fcfcfc;
+  color: #888;
+  border: none;
+}
+.input[type="checkbox"] {
+  -ms-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  padding: 0px;
+}

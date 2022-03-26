@@ -1,0 +1,49 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  font-family: pretendard;
+  font-weight: 700;
+  font-size: 14px;
+}
+.ul {
+  width: 100%;
+  margin: 15px 0;
+  padding: 0;
+  list-style: none;
+}
+.ul > li {
+  display: inline-flex;
+  margin: 2px 0;
+  width: 100%;
+}
+
+.user {
+  font-family: pretendard;
+  font-weight: 700;
+  font-size: 14px;
+}
+.comment {
+  font-family: pretendard;
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 26px;
+}
+.form {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+.input {
+  width: 70%;
+  background: #ffffff;
+  border: 1px solid #cbcbcb;
+}
+
+.submit {
+  background: #ffffff;
+  border: 1px solid #cbcbcb;
+  margin-left: 10px;
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+}

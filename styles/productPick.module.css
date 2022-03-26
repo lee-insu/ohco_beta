@@ -1,0 +1,251 @@
+.container {
+  width: 100%;
+  height: auto;
+}
+
+.inner {
+  width: 975px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 122px;
+}
+
+.title {
+  width: 100%;
+  font-family: pretendard;
+  font-weight: 700;
+  font-size: 24px;
+  color: #000;
+  padding-bottom: 16px;
+  border-bottom: 3px solid #222;
+  margin-bottom: 16px;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+.li {
+  width: 223px;
+  height: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.bookmark_img_container {
+  width: 100%;
+  height: auto;
+  border-radius: 27px;
+  overflow: hidden;
+}
+
+.img {
+  width: 223px;
+  height: 223px;
+  object-fit: cover;
+}
+.bookmark_info_container {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookmark_info_category {
+  margin-top: 5px;
+}
+
+.bookmark_info_category > :nth-child(1) {
+  font-family: pretendard;
+  font-weight: 300;
+  font-size: 13px;
+  color: #969696;
+}
+
+.bookmark_info_category > :nth-child(2) {
+  font-family: pretendard;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+}
+
+.bookmark_info_category > :nth-child(3) {
+  font-family: pretendard;
+  font-weight: 300;
+  font-size: 14px;
+  color: #000;
+}
+.bookmark {
+  width: 24px;
+  position: relative;
+  top: 12px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 767px) and (max-width: 1024px) {
+  .inner {
+    width: 98%;
+  }
+
+  .li {
+    width: 187px;
+  }
+
+  .bookmark_img_container {
+    border-radius: 20px;
+  }
+  .img {
+    max-width: 187px;
+    max-height: 187px;
+  }
+}
+
+@media screen and (min-width: 625px) and (max-width: 767px) {
+  .inner {
+    width: 98%;
+  }
+
+  .li {
+    width: 150px;
+  }
+
+  .bookmark_img_container {
+    border-radius: 20px;
+  }
+
+  .img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .bookmark_info_category > :nth-child(1) {
+    font-size: 11px;
+  }
+
+  .bookmark_info_category > :nth-child(2) {
+    font-size: 12px;
+  }
+
+  .bookmark_info_category > :nth-child(3) {
+    font-size: 12px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 625px) {
+  .inner {
+    width: 98%;
+    margin-top: 30px;
+  }
+  .title {
+    width: 100%;
+    font-family: pretendard;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    padding-bottom: 0px;
+    border-bottom: none;
+    margin-bottom: 30px;
+  }
+  .li {
+    width: 150px;
+  }
+
+  .bookmark_img_container {
+    border-radius: 20px;
+  }
+
+  .img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .bookmark_info_category > :nth-child(1) {
+    font-size: 11px;
+  }
+
+  .bookmark_info_category > :nth-child(2) {
+    font-size: 12px;
+  }
+
+  .bookmark_info_category > :nth-child(3) {
+    font-size: 12px;
+  }
+}
+@media screen and (min-width: 490px) and (max-width: 576px) {
+  .inner {
+    width: 98%;
+    margin-top: 30px;
+  }
+
+  .title {
+    width: 100%;
+    font-family: pretendard;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    padding-bottom: 0px;
+    border-bottom: none;
+    margin-bottom: 30px;
+  }
+  .li {
+    width: 187px;
+  }
+  .img {
+    max-width: 187px;
+    max-height: 187px;
+  }
+}
+@media screen and (min-width: 361px) and (max-width: 490px) {
+  .inner {
+    width: 98%;
+    margin-top: 30px;
+  }
+  .title {
+    width: 100%;
+    font-family: pretendard;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    padding-bottom: 0px;
+    border-bottom: none;
+    margin-bottom: 30px;
+  }
+
+  .li {
+    width: 187px;
+  }
+  .img {
+    max-width: 187px;
+    max-height: 187px;
+  }
+}
+
+@media screen and (max-width: 361px) {
+  .inner {
+    width: 98%;
+    margin-top: 30px;
+  }
+  .title {
+    width: 100%;
+    font-family: pretendard;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    text-align: center;
+    padding-bottom: 0px;
+    border-bottom: none;
+    margin-bottom: 30px;
+  }
+
+  .li {
+    width: 170px;
+  }
+  .img {
+    max-width: 170px;
+    max-height: 170px;
+  }
+}
