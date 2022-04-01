@@ -2,6 +2,7 @@
   width: 100%;
   height: auto;
   position: relative;
+  background-color: #fff;
 }
 .banner {
   width: 100%;
@@ -118,12 +119,12 @@
     width: 95%;
   }
   .sub_banner {
-    height: 230px;
+    height: 200px;
   }
   .sub_banner > img {
-    width: 200px;
-    height: 200px;
-    top: 1rem;
+    width: auto;
+    height: 180px;
+    top: 0.7rem;
   }
 }
 @media screen and (max-width: 390px) {
@@ -137,11 +138,11 @@
     width: 97%;
   }
   .sub_banner {
-    height: 230px;
+    height: 200px;
   }
   .sub_banner > img {
-    width: 200px;
-    height: 200px;
-    top: 1rem;
+    width: auto;
+    height: 180px;
+    top: 0.7rem;
   }
 }
