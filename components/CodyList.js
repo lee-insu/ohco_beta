@@ -68,7 +68,7 @@ const CodyList = () => {
   };
 
   const analyticsEvent = (item) => {
-    logEvent(analytics, "select_cody", {
+    logEvent(analytics, "click_weather_cody", {
       content_type: "image",
       content_id: item.id,
       items: [{ name: item.id }],

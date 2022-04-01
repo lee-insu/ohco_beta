@@ -7,7 +7,7 @@ import Link from "next/link";
 const FooterInfo = () => {
   const insta = () => {
     if (confirm("ohco 인스타로 이동할까요?")) {
-      router.push(`https://www.instagram.com/ohco.im/`);
+      window.open(`https://www.instagram.com/ohco.im/`);
     } else {
       return;
     }

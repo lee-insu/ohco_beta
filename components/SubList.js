@@ -5,6 +5,8 @@ import "antd/dist/antd.css";
 import { useQuery } from "@apollo/client";
 import { GET_CODY_BOOKMARK } from "../graphQL/schema";
 import Link from "next/link";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../service/firebase";
 
 const SubList = ({ data, theme }) => {
   const [recommandCody, getRecommandCody] = useState([]);
@@ -23,6 +25,23 @@ const SubList = ({ data, theme }) => {
   const { loading, data: codyArray } = useQuery(GET_CODY_BOOKMARK, {
     variables: { id: recommandCody },
   });
+
+  const analyticsEvent = (item) => {
+    if (theme == "music") {
+      logEvent(analytics, "click_music_cody_item", {
+        content_type: "image",
+        content_id: item.id,
+        items: [{ name: item.id }],
+      });
+    } else if (theme == "perfume") {
+      logEvent(analytics, "click_perfume_cody_item", {
+        content_type: "image",
+        content_id: item.id,
+        items: [{ name: item.id }],
+      });
+    }
+  };
+
   return (
     <div className={style.sub_list}>
       {data ? (
@@ -52,7 +71,7 @@ const SubList = ({ data, theme }) => {
                 <div className={style.cody_ul_container}>
                   <ul className={style.cody_ul}>
                     {codyArray.codyarray.slice(0, 20).map((item) => (
-                      <li key={item.id}>
+                      <li onClick={() => analyticsEvent(item)} key={item.id}>
                         <Link href={`item/${item.id}`}>
                           <img
                             className={style.usercody_img}

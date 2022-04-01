@@ -35,7 +35,7 @@ export default function Home({
       <div className={style.today_list}>
         <div className={style.inner}>
           <div className={style.title}>
-            <div className={style.style_title}>오늘 날씨에는</div>
+            <div className={style.style_title}>오늘 날씨에 어울리는 코디</div>
             <div className={style.location}>
               <Temperature />
             </div>

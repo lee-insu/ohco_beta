@@ -10,13 +10,11 @@ import * as userAction from "../store/modules/user";
 import * as emailAction from "../store/modules/email";
 import * as uidAction from "../store/modules/uid";
 import Head from "next/head";
-import { logEvent } from "firebase/analytics";
 
 function MyApp({ Component, pageProps }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    logEvent(analytics, "user_insert");
     authService.onAuthStateChanged((user) => {
       if (user) {
         dispatch(userAction.getUser(user.displayName));
@@ -31,6 +29,10 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>OHCO | 나를 표현하는 코디 </title>
         <link rel="shortcut icon" href="/img/favicon.ico" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
       </Head>
       <Layout>
         <Component {...pageProps} />

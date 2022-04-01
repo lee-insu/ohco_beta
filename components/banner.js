@@ -11,15 +11,12 @@ import SwiperCore, {
   Pagination,
   Autoplay,
 } from "swiper";
-import { useRouter } from "next/router";
 SwiperCore.use([EffectFade, Navigation, Pagination, Autoplay]);
 
 const Banner = () => {
-  const router = useRouter();
-
   const insta = () => {
     if (confirm("ohco 인스타로 이동할까요?")) {
-      router.push(`https://www.instagram.com/ohco.im/`);
+      window.open(`https://www.instagram.com/ohco.im/`);
     } else {
       return;
     }

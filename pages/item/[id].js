@@ -284,6 +284,7 @@ const Detail = ({ item, codyData, loading }) => {
                     <div className={style.answer}>
                       <a
                         href={`https://www.instagram.com/${codyItem.information.instagram}`}
+                        target="_blank"
                       >
                         @{codyItem.information.instagram}
                       </a>
@@ -293,7 +294,9 @@ const Detail = ({ item, codyData, loading }) => {
                     <div className={style.question}>유튜브</div>
                     <div className={style.answer}>
                       {codyItem.information.youtube ? (
-                        <a href={codyItem.information.youtube}>바로가기</a>
+                        <a href={codyItem.information.youtube} target="_blank">
+                          바로가기
+                        </a>
                       ) : null}
                     </div>
                   </li>
@@ -301,7 +304,9 @@ const Detail = ({ item, codyData, loading }) => {
                     <div className={style.question}>쇼핑몰</div>
                     <div className={style.answer}>
                       {codyItem.information.shop ? (
-                        <a href={codyItem.information.shop}>바로가기</a>
+                        <a href={codyItem.information.shop} target="_blank">
+                          바로가기
+                        </a>
                       ) : null}
                     </div>
                   </li>
