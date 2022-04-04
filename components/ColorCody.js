@@ -6,6 +6,8 @@ import Link from "next/link";
 import classNames from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import * as filterAction from "../store/modules/filter";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../service/firebase";
 
 export const colorList = [
   {
@@ -77,6 +79,14 @@ const ColorCody = () => {
     }
   };
 
+  const analyticsColor = (item) => {
+    logEvent(analytics, "click_index_color", {
+      content_type: "image",
+      content_id: item.mood,
+      items: [{ name: item.mood }],
+    });
+  };
+
   return (
     <div className={style.sub_list}>
       <div className={style.inner}>
@@ -92,7 +102,11 @@ const ColorCody = () => {
                   colorList.map((item, i) => (
                     <li onClick={() => clickMood(item)} key={i}>
                       <Link href={`list`}>
-                        <img className={style.usercody_img} src={item.img} />
+                        <img
+                          onClick={() => analyticsColor(item)}
+                          className={style.usercody_img}
+                          src={item.img}
+                        />
                       </Link>
                       <div className={style.cody_info_container}>
                         <div className={style.color_flex}>
