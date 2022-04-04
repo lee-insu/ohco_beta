@@ -17,6 +17,8 @@ import {
 import { fireStore } from "../../service/firebase";
 import Link from "next/link";
 import { client } from "../../service/apollo";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../service/firebase";
 
 const Music = ({ item, data, loading }) => {
   const userinfo = useSelector((state) => state);
@@ -99,6 +101,20 @@ const Music = ({ item, data, loading }) => {
     }
   };
 
+  const analyticsShopUrl = () => {
+    logEvent(analytics, "click_music_url", {
+      content_type: "link",
+    });
+  };
+
+  const analyticsMusicCody = (item) => {
+    logEvent(analytics, "click_music_cody", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
+
   return (
     <div className={style.container}>
       <div className={style.banner}></div>
@@ -133,8 +149,10 @@ const Music = ({ item, data, loading }) => {
                     </li>
                   </ul>
                   <div className={style.save_container}>
-                    <div className={style.shop_link}>
-                      <a href={music.music_url}>음악 듣기</a>
+                    <div onClick={analyticsShopUrl} className={style.shop_link}>
+                      <a href={music.music_url} target="_blank">
+                        음악 듣기
+                      </a>
                     </div>
                     <div onClick={handleBookmark} className={style.bookmark}>
                       <img
@@ -162,6 +180,7 @@ const Music = ({ item, data, loading }) => {
                     <li key={item.id}>
                       <Link href={`/item/${item.id}`}>
                         <img
+                          onClick={() => analyticsMusicCody(item)}
                           className={style.usercody_img}
                           src={item.img_url}
                         />

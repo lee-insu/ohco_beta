@@ -17,6 +17,8 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { fireStore } from "../../service/firebase";
 import { client } from "../../service/apollo";
+import { analytics } from "../../service/firebase";
+import { logEvent } from "firebase/analytics";
 
 const Product = ({ item, data, loading }) => {
   const userinfo = useSelector((state) => state);
@@ -91,6 +93,20 @@ const Product = ({ item, data, loading }) => {
     }
   };
 
+  const analyticsShopUrl = () => {
+    logEvent(analytics, "click_product_shopUrl", {
+      content_type: "link",
+    });
+  };
+
+  const analyticsSimilarProduct = (item) => {
+    logEvent(analytics, "click_SimilarProduct", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
+
   return (
     <div className={style.container}>
       <div className={style.banner}></div>
@@ -133,8 +149,10 @@ const Product = ({ item, data, loading }) => {
                     </li>
                   </ul>
                   <div className={style.save_container}>
-                    <div className={style.shop_link}>
-                      <a href={product.shop_url}>상품 찾아보기</a>
+                    <div onClick={analyticsShopUrl} className={style.shop_link}>
+                      <a href={product.shop_url} target="_blank">
+                        상품 찾아보기
+                      </a>
                     </div>
                     <div onClick={handleBookmark} className={style.bookmark}>
                       <img
@@ -163,7 +181,11 @@ const Product = ({ item, data, loading }) => {
                   {productItemsArray.productarray.map((item) => (
                     <li key={item.id} className={style.product_li}>
                       <Link href={`/product/${item.id}`}>
-                        <img className={style.product_img} src={item.img_url} />
+                        <img
+                          className={style.product_img}
+                          src={item.img_url}
+                          onClick={() => analyticsSimilarProduct(item)}
+                        />
                       </Link>
                       <div className={style.product_category}>
                         <div>{item.brand}</div>

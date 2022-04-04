@@ -27,13 +27,13 @@ const SubItemList = ({ data, theme }) => {
 
   const analyticsEvent = (item) => {
     if (theme == "music") {
-      logEvent(analytics, "click_music", {
+      logEvent(analytics, "click_index_music", {
         content_type: "image",
         content_id: item.id,
         items: [{ name: item.id }],
       });
     } else if (theme == "perfume") {
-      logEvent(analytics, "click_perfume", {
+      logEvent(analytics, "click_index_perfume", {
         content_type: "image",
         content_id: item.id,
         items: [{ name: item.id }],
@@ -60,35 +60,33 @@ const SubItemList = ({ data, theme }) => {
             <Col lg={24} xl={24} className={style.list_container}>
               <div className={style.item_ul_container}>
                 <ul className={style.item_ul}>
-                  {shuffle(itemData)
-                    .slice(0, 8)
-                    .map((item) => (
-                      <li onClick={() => analyticsEvent(item)} key={item.id}>
-                        <Link
-                          href={
-                            theme == "music"
-                              ? `music/${item.id}`
-                              : `perfume/${item.id}`
-                          }
-                        >
-                          <img className={style.item_img} src={item.img_url} />
-                        </Link>
-                        <div className={style.item_info_container}>
-                          {theme == "music" ? (
-                            <>
-                              <div>{item.mood}</div>
-                              <div>{item.name}</div>
-                            </>
-                          ) : (
-                            <>
-                              <div>{item.mood}</div>
-                              <div>{item.name}</div>
-                              <div>{item.scent}</div>
-                            </>
-                          )}
-                        </div>
-                      </li>
-                    ))}
+                  {itemData.slice(0, 8).map((item) => (
+                    <li onClick={() => analyticsEvent(item)} key={item.id}>
+                      <Link
+                        href={
+                          theme == "music"
+                            ? `music/${item.id}`
+                            : `perfume/${item.id}`
+                        }
+                      >
+                        <img className={style.item_img} src={item.img_url} />
+                      </Link>
+                      <div className={style.item_info_container}>
+                        {theme == "music" ? (
+                          <>
+                            <div>{item.mood}</div>
+                            <div>{item.name}</div>
+                          </>
+                        ) : (
+                          <>
+                            <div>{item.mood}</div>
+                            <div>{item.name}</div>
+                            <div>{item.scent}</div>
+                          </>
+                        )}
+                      </div>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </Col>

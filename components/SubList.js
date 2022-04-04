@@ -28,13 +28,13 @@ const SubList = ({ data, theme }) => {
 
   const analyticsEvent = (item) => {
     if (theme == "music") {
-      logEvent(analytics, "click_music_cody_item", {
+      logEvent(analytics, "click_index_musicody", {
         content_type: "image",
         content_id: item.id,
         items: [{ name: item.id }],
       });
     } else if (theme == "perfume") {
-      logEvent(analytics, "click_perfume_cody_item", {
+      logEvent(analytics, "click_index_perfumecody", {
         content_type: "image",
         content_id: item.id,
         items: [{ name: item.id }],

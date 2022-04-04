@@ -17,6 +17,8 @@ import {
 import { fireStore } from "../../service/firebase";
 import Link from "next/link";
 import { client } from "../../service/apollo";
+import { analytics } from "../../service/firebase";
+import { logEvent } from "firebase/analytics";
 
 const Perfume = ({ item, data, loading }) => {
   const userinfo = useSelector((state) => state);
@@ -92,6 +94,20 @@ const Perfume = ({ item, data, loading }) => {
     }
   };
 
+  const analyticsPerfumeCody = (item) => {
+    logEvent(analytics, "click_perfume_cody", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
+
+  const analyticsShopUrl = () => {
+    logEvent(analytics, "click_perfume_shopUrl", {
+      content_type: "link",
+    });
+  };
+
   return (
     <div className={style.container}>
       <div className={style.banner}></div>
@@ -135,8 +151,10 @@ const Perfume = ({ item, data, loading }) => {
                     </li>
                   </ul>
                   <div className={style.save_container}>
-                    <div className={style.shop_link}>
-                      <a href={perfume.shop_url}>상품 찾아보기</a>
+                    <div onClick={analyticsShopUrl} className={style.shop_link}>
+                      <a href={perfume.shop_url} target="_blank">
+                        상품 찾아보기
+                      </a>
                     </div>
                     <div onClick={handleBookmark} className={style.bookmark}>
                       <img
@@ -168,6 +186,7 @@ const Perfume = ({ item, data, loading }) => {
                         <img
                           className={style.usercody_img}
                           src={item.img_url}
+                          onClick={() => analyticsPerfumeCody(item)}
                         />
                       </Link>
                       <div className={style.info_category}>

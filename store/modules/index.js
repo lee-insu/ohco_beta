@@ -10,6 +10,7 @@ import music from "./music";
 import perfume from "./perfume";
 import temp from "./temp";
 import search from "./search";
+import filter from "./filter";
 
 const reducer = (state, action) => {
   if (action.type === HYDRATE) {
@@ -28,6 +29,7 @@ const reducer = (state, action) => {
     perfume,
     temp,
     search,
+    filter,
   })(state, action);
 };
 

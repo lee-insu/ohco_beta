@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-const link = "https://ohco.kr/graph";
+const link = "http://localhost:8000/graphql";
 
 export const client = new ApolloClient({
   uri: link,

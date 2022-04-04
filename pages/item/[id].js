@@ -22,6 +22,8 @@ import {
 } from "firebase/firestore";
 import Link from "next/link";
 import { client } from "../../service/apollo.js";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "../../service/firebase";
 
 const Detail = ({ item, codyData, loading }) => {
   const [codyItem, getCodyItem] = useState([]);
@@ -230,6 +232,45 @@ const Detail = ({ item, codyData, loading }) => {
     }
   }, [similarData]);
 
+  const analyticsProduct = (item) => {
+    logEvent(analytics, "click_item_product", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
+
+  const analyticsMusic = (item) => {
+    logEvent(analytics, "click_item_music", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
+
+  const analyticsPerfume = (item) => {
+    logEvent(analytics, "click_item_perfume", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
+
+  const analyticsSimilar = (item) => {
+    logEvent(analytics, "click_item_similar", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
+
+  const analyticsUser = (item) => {
+    logEvent(analytics, "click_item_usercody", {
+      content_type: "image",
+      content_id: item.id,
+      items: [{ name: item.id }],
+    });
+  };
   return (
     <div className={style.container}>
       <div className={style.banner}></div>
@@ -336,6 +377,7 @@ const Detail = ({ item, codyData, loading }) => {
                       <li key={item.id}>
                         <Link href={`/item/${item.id}`}>
                           <img
+                            onClick={() => analyticsSimilar(item)}
                             className={style.usercody_img}
                             src={item.img_url}
                           />
@@ -360,6 +402,7 @@ const Detail = ({ item, codyData, loading }) => {
                         <li key={item.id}>
                           <Link href={`/item/${item.id}`}>
                             <img
+                              onClick={() => analyticsUser(item)}
                               className={style.usercody_img}
                               src={item.img_url}
                             />
@@ -374,6 +417,51 @@ const Detail = ({ item, codyData, loading }) => {
                 </ul>
               </div>
             </Col>
+            {Array.isArray(codyItem.products) &&
+            codyItem.products.length !== 0 ? (
+              <Col lg={24} xl={24} className={style.list_container}>
+                <div className={style.sub_head}>이 코디와 연관된 상품</div>
+                <div className={style.cody_ul_container}>
+                  <ul className={style.product_ul}>
+                    {codyItem.products.map((item) => (
+                      <li key={item.id} className={style.product_li}>
+                        <img
+                          onClick={
+                            productId.includes(item.id)
+                              ? () => unactiveProduct(item.id)
+                              : () => activeProduct(item)
+                          }
+                          className={style.product_bookmark}
+                          src={
+                            productId.includes(item.id)
+                              ? "/icon/icons8-bookmark-filled.svg"
+                              : "/icon/icons8-bookmark.svg"
+                          }
+                        />
+
+                        <Link href={`/product/${item.id}`}>
+                          <img
+                            onClick={() => analyticsProduct(item)}
+                            className={style.product_img}
+                            src={item.img_url}
+                          />
+                        </Link>
+                        <div className={style.product_category}>
+                          <div>{item.brand}</div>
+                          <div>{item.name}</div>
+                          <div>
+                            {item.price
+                              ? item.price.toLocaleString("en-US")
+                              : 0}
+                            원
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Col>
+            ) : null}
             {Array.isArray(codyItem.music) && codyItem.music.length !== 0 ? (
               <Col lg={24} xl={24} className={style.list_container}>
                 <div className={style.sub_head}>코디와 어울리는 노래</div>
@@ -397,6 +485,7 @@ const Detail = ({ item, codyData, loading }) => {
 
                         <Link href={`/music/${item.id}`}>
                           <img
+                            onClick={() => analyticsMusic(item)}
                             className={style.product_img}
                             src={item.img_url}
                           />
@@ -437,50 +526,7 @@ const Detail = ({ item, codyData, loading }) => {
 
                         <Link href={`/perfume/${item.id}`}>
                           <img
-                            className={style.product_img}
-                            src={item.img_url}
-                          />
-                        </Link>
-                        <div className={style.product_category}>
-                          <div>{item.brand}</div>
-                          <div>{item.name}</div>
-                          <div>
-                            {item.price
-                              ? item.price.toLocaleString("en-US")
-                              : 0}
-                            원
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Col>
-            ) : null}
-            {Array.isArray(codyItem.products) &&
-            codyItem.products.length !== 0 ? (
-              <Col lg={24} xl={24} className={style.list_container}>
-                <div className={style.sub_head}>이 코디와 연관된 상품</div>
-                <div className={style.cody_ul_container}>
-                  <ul className={style.product_ul}>
-                    {codyItem.products.map((item) => (
-                      <li key={item.id} className={style.product_li}>
-                        <img
-                          onClick={
-                            productId.includes(item.id)
-                              ? () => unactiveProduct(item.id)
-                              : () => activeProduct(item)
-                          }
-                          className={style.product_bookmark}
-                          src={
-                            productId.includes(item.id)
-                              ? "/icon/icons8-bookmark-filled.svg"
-                              : "/icon/icons8-bookmark.svg"
-                          }
-                        />
-
-                        <Link href={`/product/${item.id}`}>
-                          <img
+                            onClick={() => analyticsPerfume(item)}
                             className={style.product_img}
                             src={item.img_url}
                           />
