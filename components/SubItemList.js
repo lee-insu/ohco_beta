@@ -60,33 +60,35 @@ const SubItemList = ({ data, theme }) => {
             <Col lg={24} xl={24} className={style.list_container}>
               <div className={style.item_ul_container}>
                 <ul className={style.item_ul}>
-                  {itemData.slice(0, 8).map((item) => (
-                    <li onClick={() => analyticsEvent(item)} key={item.id}>
-                      <Link
-                        href={
-                          theme == "music"
-                            ? `music/${item.id}`
-                            : `perfume/${item.id}`
-                        }
-                      >
-                        <img className={style.item_img} src={item.img_url} />
-                      </Link>
-                      <div className={style.item_info_container}>
-                        {theme == "music" ? (
-                          <>
-                            <div>{item.mood}</div>
-                            <div>{item.name}</div>
-                          </>
-                        ) : (
-                          <>
-                            <div>{item.mood}</div>
-                            <div>{item.name}</div>
-                            <div>{item.scent}</div>
-                          </>
-                        )}
-                      </div>
-                    </li>
-                  ))}
+                  {shuffle(itemData)
+                    .slice(0, 8)
+                    .map((item) => (
+                      <li onClick={() => analyticsEvent(item)} key={item.id}>
+                        <Link
+                          href={
+                            theme == "music"
+                              ? `music/${item.id}`
+                              : `perfume/${item.id}`
+                          }
+                        >
+                          <img className={style.item_img} src={item.img_url} />
+                        </Link>
+                        <div className={style.item_info_container}>
+                          {theme == "music" ? (
+                            <>
+                              <div>{item.mood}</div>
+                              <div>{item.name}</div>
+                            </>
+                          ) : (
+                            <>
+                              <div>{item.mood}</div>
+                              <div>{item.name}</div>
+                              <div>{item.scent}</div>
+                            </>
+                          )}
+                        </div>
+                      </li>
+                    ))}
                 </ul>
               </div>
             </Col>

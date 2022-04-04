@@ -214,9 +214,26 @@ const list = () => {
         setFilSeason("");
         dispatch(filterAction.getSeason(""));
         break;
-      case "상쾌한 무드":
-      case "차분한 무드":
-      case "포근한 무드":
+      case "네이비와 차분한 무드":
+      case "네이비와 포근한 무드":
+      case "버건디와 차분한 무드":
+      case "화이트와 차분한 무드":
+      case "화이트와 포근한 무드":
+      case "그레이와 차분한 무드":
+      case "그레이와 포근한 무드":
+      case "블랙과 차분한 무드":
+      case "블랙과 포근한 무드":
+      case "그린과 차분한 무드":
+      case "그린과 포근한 무드":
+      case "엘로우와 차분한 무드":
+      case "엘로우와 포근한 무드":
+      case "블루와 차분한 무드":
+      case "블루와 포근한 무드":
+      case "베이지와 차분한 무드":
+      case "베이지와 포근한 무드":
+      case "레드와 차분한 무드":
+      case "레드와 포근한 무드":
+      case "퍼플과 차분한 무드":
         setFilMood("");
         dispatch(filterAction.getMood(""));
         break;

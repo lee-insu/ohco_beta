@@ -13,6 +13,7 @@ import {
 import SubItemList from "../components/SubItemList";
 import { client } from "../service/apollo";
 import Temperature from "../components/Temperature";
+import ColorCody from "../components/ColorCody";
 
 export default function Home({
   musicArray,
@@ -35,12 +36,17 @@ export default function Home({
       <div className={style.today_list}>
         <div className={style.inner}>
           <div className={style.title}>
-            <div className={style.style_title}>오늘 날씨에 어울리는 코디</div>
+            <div className={style.style_title}>지금 날씨에 어울리는 코디</div>
             <div className={style.location}>
               <Temperature />
             </div>
           </div>
           <CodyList />
+        </div>
+      </div>
+      <div className={style.today_list}>
+        <div className={style.sub_inner}>
+          <ColorCody />
         </div>
       </div>
       <div className={style.sub_banner}>
@@ -79,7 +85,7 @@ export default function Home({
     </div>
   );
 }
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const { loading: music_loading, data: music_data } = await client.query({
     query: GET_MUSIC_ARRAY,
   });

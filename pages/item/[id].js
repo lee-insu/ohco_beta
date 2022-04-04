@@ -368,6 +368,51 @@ const Detail = ({ item, codyData, loading }) => {
           </Row>
 
           <Row>
+            {Array.isArray(codyItem.products) &&
+            codyItem.products.length !== 0 ? (
+              <Col lg={24} xl={24} className={style.list_container}>
+                <div className={style.sub_head}>이 코디와 연관된 상품</div>
+                <div className={style.cody_ul_container}>
+                  <ul className={style.product_ul}>
+                    {codyItem.products.map((item) => (
+                      <li key={item.id} className={style.product_li}>
+                        <img
+                          onClick={
+                            productId.includes(item.id)
+                              ? () => unactiveProduct(item.id)
+                              : () => activeProduct(item)
+                          }
+                          className={style.product_bookmark}
+                          src={
+                            productId.includes(item.id)
+                              ? "/icon/icons8-bookmark-filled.svg"
+                              : "/icon/icons8-bookmark.svg"
+                          }
+                        />
+
+                        <Link href={`/product/${item.id}`}>
+                          <img
+                            onClick={() => analyticsProduct(item)}
+                            className={style.product_img}
+                            src={item.img_url}
+                          />
+                        </Link>
+                        <div className={style.product_category}>
+                          <div>{item.brand}</div>
+                          <div>{item.name}</div>
+                          <div>
+                            {item.price
+                              ? item.price.toLocaleString("en-US")
+                              : 0}
+                            원
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Col>
+            ) : null}
             <Col lg={24} xl={24} className={style.list_container}>
               <div className={style.sub_head}>비슷한 분위기의 코디</div>
               <div className={style.cody_ul_container}>
@@ -417,51 +462,7 @@ const Detail = ({ item, codyData, loading }) => {
                 </ul>
               </div>
             </Col>
-            {Array.isArray(codyItem.products) &&
-            codyItem.products.length !== 0 ? (
-              <Col lg={24} xl={24} className={style.list_container}>
-                <div className={style.sub_head}>이 코디와 연관된 상품</div>
-                <div className={style.cody_ul_container}>
-                  <ul className={style.product_ul}>
-                    {codyItem.products.map((item) => (
-                      <li key={item.id} className={style.product_li}>
-                        <img
-                          onClick={
-                            productId.includes(item.id)
-                              ? () => unactiveProduct(item.id)
-                              : () => activeProduct(item)
-                          }
-                          className={style.product_bookmark}
-                          src={
-                            productId.includes(item.id)
-                              ? "/icon/icons8-bookmark-filled.svg"
-                              : "/icon/icons8-bookmark.svg"
-                          }
-                        />
 
-                        <Link href={`/product/${item.id}`}>
-                          <img
-                            onClick={() => analyticsProduct(item)}
-                            className={style.product_img}
-                            src={item.img_url}
-                          />
-                        </Link>
-                        <div className={style.product_category}>
-                          <div>{item.brand}</div>
-                          <div>{item.name}</div>
-                          <div>
-                            {item.price
-                              ? item.price.toLocaleString("en-US")
-                              : 0}
-                            원
-                          </div>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Col>
-            ) : null}
             {Array.isArray(codyItem.music) && codyItem.music.length !== 0 ? (
               <Col lg={24} xl={24} className={style.list_container}>
                 <div className={style.sub_head}>코디와 어울리는 노래</div>
