@@ -225,8 +225,8 @@ const list = () => {
       case "블랙과 포근한 무드":
       case "그린과 차분한 무드":
       case "그린과 포근한 무드":
-      case "엘로우와 차분한 무드":
-      case "엘로우와 포근한 무드":
+      case "옐로우와 차분한 무드":
+      case "옐로우와 포근한 무드":
       case "블루와 차분한 무드":
       case "블루와 포근한 무드":
       case "베이지와 차분한 무드":
@@ -234,6 +234,7 @@ const list = () => {
       case "레드와 차분한 무드":
       case "레드와 포근한 무드":
       case "퍼플과 차분한 무드":
+      case "핑크와 차분한 무드":
         setFilMood("");
         dispatch(filterAction.getMood(""));
         break;

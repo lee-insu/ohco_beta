@@ -332,7 +332,7 @@ const Detail = ({ item, codyData, loading }) => {
                     </div>
                   </li>
                   <li>
-                    <div className={style.question}>유튜브</div>
+                    <div className={style.question}>개인 채널</div>
                     <div className={style.answer}>
                       {codyItem.information.youtube ? (
                         <a href={codyItem.information.youtube} target="_blank">

@@ -52,8 +52,8 @@ export const filterList = [
       { id: "분위기", value: "블랙과 포근한 무드", isChecked: false },
       { id: "분위기", value: "그린과 차분한 무드", isChecked: false },
       { id: "분위기", value: "그린과 포근한 무드", isChecked: false },
-      { id: "분위기", value: "엘로우와 차분한 무드", isChecked: false },
-      { id: "분위기", value: "엘로우와 포근한 무드", isChecked: false },
+      { id: "분위기", value: "옐로우와 차분한 무드", isChecked: false },
+      { id: "분위기", value: "옐로우와 포근한 무드", isChecked: false },
       { id: "분위기", value: "블루와 차분한 무드", isChecked: false },
       { id: "분위기", value: "블루와 포근한 무드", isChecked: false },
       { id: "분위기", value: "베이지와 차분한 무드", isChecked: false },
@@ -61,6 +61,7 @@ export const filterList = [
       { id: "분위기", value: "레드와 차분한 무드", isChecked: false },
       { id: "분위기", value: "레드와 포근한 무드", isChecked: false },
       { id: "분위기", value: "퍼플과 차분한 무드", isChecked: false },
+      { id: "분위기", value: "핑크와 차분한 무드", isChecked: false },
     ],
   },
   {
