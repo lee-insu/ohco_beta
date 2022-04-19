@@ -11,6 +11,7 @@ import * as searchAction from "../store/modules/search";
 import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client";
 import { GET_SEARCH_CODY } from "../graphQL/schema";
+import * as filterAction from "../store/modules/filter";
 
 const Header = () => {
   const displayName = useSelector((state) => state.displayName);
@@ -32,6 +33,7 @@ const Header = () => {
 
   const [searchActive, setSearchActive] = useState(false);
   const [result, getResult] = useState(null);
+  const [sex, setSex] = useState(true);
   const router = useRouter();
 
   const dispatch = useDispatch();
@@ -56,6 +58,12 @@ const Header = () => {
     }
   }, [result]);
 
+  useEffect(() => {
+    if (sex) {
+      dispatch(filterAction.getSex("여"));
+    }
+  }, [sex]);
+
   const onSubmit = (e) => {
     e.preventDefault();
     dispatch(searchAction.getSearch(result));
@@ -68,6 +76,16 @@ const Header = () => {
       search: result,
     },
   });
+
+  const selectSex = (e) => {
+    if (e == "m") {
+      setSex(!sex);
+      dispatch(filterAction.getSex("여"));
+    } else {
+      setSex(!sex);
+      dispatch(filterAction.getSex("남"));
+    }
+  };
 
   return (
     <div className={style.container}>
@@ -85,6 +103,13 @@ const Header = () => {
               onClick={searchShow}
               src="/icon/icons8-search.svg"
             />
+            <div className={style.select_sex}>
+              {sex ? (
+                <div onClick={() => selectSex("w")}>W</div>
+              ) : (
+                <div onClick={() => selectSex("m")}>M</div>
+              )}
+            </div>
             <Link href="/list">
               <div>LIST</div>
             </Link>
@@ -165,6 +190,13 @@ const Header = () => {
           </Link>
 
           <nav className={style.nav_ul}>
+            <div className={style.select_sex}>
+              {sex ? (
+                <div onClick={() => selectSex("w")}>W</div>
+              ) : (
+                <div onClick={() => selectSex("m")}>M</div>
+              )}
+            </div>
             <div className={style.nav_btn}>
               <img
                 onClick={searchShow}

@@ -46,11 +46,13 @@ const CodyList = () => {
   const [cody, getCody] = useState([]);
   const [loadmore, setLoadmore] = useState(4);
   const [season, handleSeoson] = useState("");
+  const sex = useSelector((state) => state.filter.sex);
 
   const { loading, error, data } = useQuery(GET_CODY_MAIN, {
     variables: {
       offset: 0,
       limit: loadmore,
+      sex,
       season,
     },
   });

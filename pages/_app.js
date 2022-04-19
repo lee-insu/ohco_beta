@@ -35,7 +35,10 @@ function MyApp({ Component, pageProps }) {
         />
         <meta propery="og:type" content="website" />
         <meta property="og:title" content="OH CO!" />
-        <meta property="og:description" content="나를 표현하는 코디" />
+        <meta
+          property="og:description"
+          content="OH CO! | 나를 표현하는 코디를 찾아보세요. 다양한 코디와 기준으로 여러분의 분위기에 맞는 코디를 찾아 드립니다."
+        />
         <meta property="og:image" content="/img/logo.jpg" />
         <meta property="og:site_name" content="ohco" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />

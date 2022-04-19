@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
 const GET_CODY_MAIN = gql`
-  query CodyMain($season: String, $offset: Int, $limit: Int) {
-    codymain(seoson: $season, offset: $offset, limit: $limit) {
+  query CodyMain($sex: String, $season: String, $offset: Int, $limit: Int) {
+    codymain(sex: $sex, season: $season, offset: $offset, limit: $limit) {
       id
       user_id
       img_url

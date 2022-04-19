@@ -67,6 +67,17 @@
   height: 24px;
 }
 
+.select_sex {
+  width: auto;
+  position: relative;
+}
+
+.select_sex > div {
+  font-family: pretendard;
+  font-weight: 300;
+  color: #303030;
+}
+
 .menu_btn {
   font-family: pretendard;
   font-weight: 500;
@@ -161,4 +172,15 @@
   font-weight: 300;
   font-size: 15px;
   color: #2e2e2e;
+}
+@media screen and (max-width: 1024px) {
+  .select_sex > div {
+    font-family: pretendard;
+    position: relative;
+    font-weight: 300;
+    font-size: 18px;
+    bottom: 1px;
+    left: 10px;
+    color: #303030;
+  }
 }
