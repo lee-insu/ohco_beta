@@ -55,9 +55,11 @@ const Temperature = () => {
     defaultGeo().then(
       axios.spread((res1, res2) => {
         getArea(res1.data.documents[0].region_2depth_name);
-        dispatch(tempAction.getTemp(Math.round(res2.data.main.temp) - 273));
-        getTemp(Math.round(res2.data.main.temp) - 273);
-        getWeather(res2.data.weather[0].main);
+        dispatch(
+          tempAction.getTemp(Math.round(res2.data.list[0].temp.day) - 273)
+        );
+        getTemp(Math.round(res2.data.list[0].temp.day) - 273);
+        getWeather(res2.data.list[0].weather[0].main);
       })
     );
   }, []);
@@ -73,10 +75,10 @@ const Temperature = () => {
             axios.spread((res1, res2) => {
               getArea(res1.data.documents[0].region_2depth_name);
               dispatch(
-                tempAction.getTemp(Math.round(res2.data.main.temp) - 273)
+                tempAction.getTemp(Math.round(res2.data.list[0].temp.day) - 273)
               );
-              getTemp(Math.round(res2.data.main.temp) - 273);
-              getWeather(res2.data.weather[0].main);
+              getTemp(Math.round(res2.data.list[0].temp.day) - 273);
+              getWeather(res2.data.list[0].weather[0].main);
               logEvent(analytics, "click_temperature", { name: "temperature" });
               setTriger(true);
             })

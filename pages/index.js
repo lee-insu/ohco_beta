@@ -14,6 +14,8 @@ import SubItemList from "../components/SubItemList";
 import { client } from "../service/apollo";
 import Temperature from "../components/Temperature";
 import ColorCody from "../components/ColorCody";
+import axios from "axios";
+import TemperatureTomorrow from "../components/Temperature_tomorrow";
 
 export default function Home({
   musicArray,
@@ -36,7 +38,7 @@ export default function Home({
       <div className={style.today_list}>
         <div className={style.inner}>
           <div className={style.title}>
-            <div className={style.style_title}>지금 날씨에 어울리는 코디</div>
+            <div className={style.style_title}>오늘 날씨에 어울리는 코디</div>
             <div className={style.location}>
               <Temperature />
             </div>
@@ -44,6 +46,7 @@ export default function Home({
           <CodyList />
         </div>
       </div>
+
       <div className={style.today_list}>
         <div className={style.sub_inner}>
           <ColorCody />

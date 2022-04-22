@@ -11,6 +11,8 @@ import SwiperCore, {
   Pagination,
   Autoplay,
 } from "swiper";
+import { BrowserView, MobileView } from "react-device-detect";
+
 SwiperCore.use([EffectFade, Navigation, Pagination, Autoplay]);
 
 const Banner = () => {

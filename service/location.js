@@ -15,7 +15,7 @@ const handleGeoSuccess = async (position) => {
       }
     ),
     axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lon=${lon}&lat=${lat}&appid=${weatherApi}`
+      `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=2&appid=${weatherApi}`
     ),
   ]);
   return location;
@@ -34,7 +34,7 @@ const defaultGeo = () => {
       }
     ),
     axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?lon=127.04020267241&lat=37.547076399306&appid=${weatherApi}`
+      `https://api.openweathermap.org/data/2.5/forecast/daily?lat=36.8166117&lon=127.1580958&cnt=2&appid=${weatherApi}`
     ),
   ]);
   return location;
