@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 import "antd/dist/antd.css";
-import { Col, Row } from "antd";
-import { GET_CODY_MAIN } from "../graphQL/schema";
-import { useQuery } from "@apollo/client";
+import {Col, Row} from "antd";
+import {GET_CODY_MAIN} from "../graphQL/schema";
+import {useQuery} from "@apollo/client";
 import style from "../styles/CodyList.module.css";
 import Link from "next/link";
-import { useSelector } from "react-redux";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "../service/firebase";
+import {useSelector} from "react-redux";
+import {logEvent} from "firebase/analytics";
+import {analytics} from "../service/firebase";
 
 const tempCody = (temp) => {
   let season = "";
@@ -48,7 +48,7 @@ const CodyList = () => {
   const [season, handleSeoson] = useState("");
   const sex = useSelector((state) => state.filter.sex);
 
-  const { loading, error, data } = useQuery(GET_CODY_MAIN, {
+  const {loading, error, data} = useQuery(GET_CODY_MAIN, {
     variables: {
       offset: 0,
       limit: loadmore,
@@ -58,7 +58,10 @@ const CodyList = () => {
   });
 
   useEffect(() => {
-    const tempSeason = tempCody(temperature);
+    // const tempSeason = tempCody(temperature);
+    // api 변경으로 추후 수정해야함
+    const tempSeason = "초여름";
+
     handleSeoson(tempSeason);
     if (data) {
       getCody(data.codymain);
@@ -73,7 +76,7 @@ const CodyList = () => {
     logEvent(analytics, "click_index_weathercody", {
       content_type: "image",
       content_id: item.id,
-      items: [{ name: item.id }],
+      items: [{name: item.id}],
     });
   };
 

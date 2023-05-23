@@ -14,8 +14,6 @@ import SubItemList from "../components/SubItemList";
 import { client } from "../service/apollo";
 import Temperature from "../components/Temperature";
 import ColorCody from "../components/ColorCody";
-import axios from "axios";
-import TemperatureTomorrow from "../components/Temperature_tomorrow";
 
 export default function Home({
   musicArray,
