@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache } from "@apollo/client";
 
-const link = "http://localhost:8000/graphql";
+const link = process.env.NEXT_PUBLIC_URL;
 
 export const client = new ApolloClient({
   uri: link,
